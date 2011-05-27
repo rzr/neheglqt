@@ -1,0 +1,7 @@
+neheglqt (0.0.20050123-0~rzr1) unstable; urgency=low
+
+  * Initial release
+  * import from :
+    http://www.digitalfanatics.org/projects/qt_tutorial/examples/ex14.tar.gz
+
+ -- Philippe Coval <rzr@gna.org>  Fri, 27 May 2011 23:25:47 +0200
