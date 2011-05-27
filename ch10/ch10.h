@@ -1,11 +1,10 @@
 #include <cmath>
 
-#include <qimage.h>
-#include <q3valuelist.h>
-#include <qfile.h>
-//Added by qt3to4:
-#include <Q3TextStream>
+#include <QImage>
+#include <QFile>
 #include <QKeyEvent>
+#include <QTextStream>
+
 #include "../nehewidget.h"
 
 
@@ -18,6 +17,7 @@ typedef struct {
 typedef struct {
   Vertex vertex[3];
 } Triangle;
+
 
 class NeHeChapter10 : public NeHeWidget
 {
@@ -36,7 +36,7 @@ private:
 	GLuint filter;
 	GLuint texture[3];
 	
-	Q3ValueList<Triangle> triangles;
+        QList<Triangle> triangles;
 	
 	void loadTriangles()
 	{
@@ -44,7 +44,7 @@ private:
 		
 		if( f.open( QIODevice::ReadOnly ) )
 		{
-			Q3TextStream ts( &f );
+                        QTextStream ts( &f );
 			
 			Vertex v[3];
 			int vcount = 0;
@@ -52,7 +52,9 @@ private:
 			
 			while( !ts.atEnd() )
 			{
-				QStringList line = QStringList::split( " ", ts.readLine().simplifyWhiteSpace() );
+                                QStringList line
+                                        = ts.readLine().simplified().split
+                                        (' ' ); //#~rzr{}
 				
 				if( line.count() == 5 )
 				{
@@ -175,7 +177,7 @@ protected:
 		glTranslatef(xtrans, ytrans, ztrans);
 		glBindTexture(GL_TEXTURE_2D, texture[filter]);
 
-		for( Q3ValueList<Triangle>::const_iterator i=triangles.begin(); i!=triangles.end(); ++i )
+                for( QList<Triangle>::const_iterator i=triangles.begin(); i!=triangles.end(); ++i )
 		{
 			glBegin(GL_TRIANGLES);
 				glNormal3f( 0.0f, 0.0f, 1.0f);

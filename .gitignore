@@ -63,5 +63,6 @@ portinglog.txt
 */Makefile.Debug
 */Makefile.Release
 */debug/
+*-build-*/
 
 #eof

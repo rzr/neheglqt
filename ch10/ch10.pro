@@ -4,7 +4,7 @@
 
 TEMPLATE = app
 
-QT+=opengl qt3support
+QT+=opengl
 
 INCLUDEPATH += .
 #LIBS += -lGLU
@@ -12,3 +12,12 @@ INCLUDEPATH += .
 # Input
 HEADERS += ../nehewidget.h ch10.h
 SOURCES += main.cpp ../nehewidget.cpp
+
+unix:!symbian {
+    maemo5 {
+        target.path = /opt/usr/bin
+    } else {
+        target.path = /usr/local/bin
+    }
+    INSTALLS += target
+}
