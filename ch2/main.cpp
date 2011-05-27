@@ -6,8 +6,7 @@ int main( int argc, char **argv )
 {
 	QApplication a( argc, argv );
 	
-	NeHeWidget *w = new NeHeChapter2();
-	a.setMainWidget( w );
+  NeHeWidget *w = new NeHeChapter2();
 	w->show();
 	
 	return a.exec();

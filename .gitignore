@@ -1,0 +1,67 @@
+# file://./.gitignore
+
+#{ tmp
+*~
+*.log
+*.tmp
+*.bak
+*.rej
+*.orig
+*.mine
+tmp
+#.*
+._*
+\#*#
+.\#*
+#} tmp
+
+#{ vc
+.git
+.hg
+.bzr
+.svn
+CVS
+.sbas
+#} vc
+
+#{ build
+*.class
+*.o
+a.out
+*.deb
+/.deps/
+build-stamp
+main
+tmp
+core
+#} build
+
+#{cmake
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+#}cmake
+
+
+*.zip
+
+moc_*.cpp
+ui_*.h
+
+qtc_packaging/
+
+                                                                                                                                                                                                            
+*-build-desktop
+*/*.pro.user
+*.pro.user*
+*.pro.user.2.1pre1
+
+**/portinglog.txt
+portinglog.txt
+
+*/Makefile.Debug
+*/Makefile.Release
+*/debug/
+
+#eof

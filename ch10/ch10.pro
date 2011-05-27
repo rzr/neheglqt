@@ -3,8 +3,11 @@
 ######################################################################
 
 TEMPLATE = app
+
+QT+=opengl qt3support
+
 INCLUDEPATH += .
-LIBS += -lGLU
+#LIBS += -lGLU
 
 # Input
 HEADERS += ../nehewidget.h ch10.h

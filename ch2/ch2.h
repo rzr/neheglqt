@@ -3,7 +3,7 @@
 class NeHeChapter2 : public NeHeWidget
 {
 public:
-	NeHeChapter2( QWidget *parent=0, char *name=0 ) : NeHeWidget( 0, parent, name )
+  NeHeChapter2( QWidget *parent=0, char *name=0 ) : NeHeWidget( 0, parent , name )
 	{
 	}
 	

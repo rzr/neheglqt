@@ -3,9 +3,14 @@
 ######################################################################
 
 TEMPLATE = app
+
+QT+=opengl
+
 INCLUDEPATH += .
-LIBS += -lGLU
+#LIBS += -lGLU
 
 # Input
 HEADERS += ../nehewidget.h ch2.h
 SOURCES += main.cpp ../nehewidget.cpp
+
+

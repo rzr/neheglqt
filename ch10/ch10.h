@@ -1,8 +1,13 @@
-#include <qimage.h>
-#include <qvaluelist.h>
-#include <qfile.h>
+#include <cmath>
 
+#include <qimage.h>
+#include <q3valuelist.h>
+#include <qfile.h>
+//Added by qt3to4:
+#include <Q3TextStream>
+#include <QKeyEvent>
 #include "../nehewidget.h"
+
 
 const float piover180 = 0.0174532925f;
 
@@ -31,15 +36,15 @@ private:
 	GLuint filter;
 	GLuint texture[3];
 	
-	QValueList<Triangle> triangles;
+	Q3ValueList<Triangle> triangles;
 	
 	void loadTriangles()
 	{
-		QFile f( "world.txt" );
+    QFile f( "../ch10/" "world.txt" );
 		
-		if( f.open( IO_ReadOnly ) )
+		if( f.open( QIODevice::ReadOnly ) )
 		{
-			QTextStream ts( &f );
+			Q3TextStream ts( &f );
 			
 			Vertex v[3];
 			int vcount = 0;
@@ -90,9 +95,9 @@ private:
 		
 		if ( !b.load( "../images/mud.bmp" ) )
 		{
-			b = QImage( 16, 16, 32 );
-			b.fill( Qt::green.rgb() );
-		}
+      b = QImage( 16, 16 , QImage::Format_RGB32 );
+      b.fill( QColor(Qt::green).value() );
+    }
 		
 		t = QGLWidget::convertToGLFormat( b );
 		glGenTextures( 3, &texture[0] );
@@ -170,7 +175,7 @@ protected:
 		glTranslatef(xtrans, ytrans, ztrans);
 		glBindTexture(GL_TEXTURE_2D, texture[filter]);
 
-		for( QValueList<Triangle>::const_iterator i=triangles.begin(); i!=triangles.end(); ++i )
+		for( Q3ValueList<Triangle>::const_iterator i=triangles.begin(); i!=triangles.end(); ++i )
 		{
 			glBegin(GL_TRIANGLES);
 				glNormal3f( 0.0f, 0.0f, 1.0f);

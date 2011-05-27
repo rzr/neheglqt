@@ -1,5 +1,7 @@
+#include <cmath>
+
 #include <qimage.h>
-#include <qvaluelist.h>
+#include <q3valuelist.h>
 #include <qfile.h>
 
 #include "../nehewidget.h"
@@ -22,9 +24,9 @@ private:
 		
 		if ( !b.load( "../images/tim.bmp" ) )
 		{
-			b = QImage( 16, 16, 32 );
-			b.fill( Qt::green.rgb() );
-		}
+        b = QImage( 16, 16 , QImage::Format_RGB32 );
+        b.fill( QColor(Qt::green).value() );
+    }
 		
 		t = QGLWidget::convertToGLFormat( b );
 		glGenTextures( 1, &texture[0] );

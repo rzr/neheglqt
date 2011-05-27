@@ -1,6 +1,7 @@
 #ifndef NEHEWIDGET_H
 #define NEHEWIDGET_H
 
+#include <QKeyEvent>
 #include <qgl.h>
 
 class QTimer;

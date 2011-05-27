@@ -3,7 +3,8 @@
 #include <qapplication.h>
 #include <qtimer.h>
 
-NeHeWidget::NeHeWidget( int timerInterval, QWidget *parent, char *name ) : QGLWidget( parent, name )
+NeHeWidget::NeHeWidget( int timerInterval, QWidget *parent, char *name )
+  : QGLWidget( parent /*, name*/ )
 {
 	if( timerInterval == 0 )
 		m_timer = 0;

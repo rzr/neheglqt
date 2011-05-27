@@ -24,9 +24,9 @@ private:
 		
 		if ( !b.load( "../images/glass.bmp" ) )
 		{
-			b = QImage( 16, 16, 32 );
-			b.fill( Qt::green.rgb() );
-		}
+      b = QImage( 16, 16 , QImage::Format_RGB32 );
+      b.fill( QColor(Qt::green).value() );
+    }
 		
 		t = QGLWidget::convertToGLFormat( b );
 		glGenTextures( 3, &texture[0] );
