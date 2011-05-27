@@ -12,6 +12,8 @@ This project is "nehe tutorial samples" ported to qt4 for GNU/Linux debian
 
 ## TODO ##
 
+* top makefile
+* debian packaging
 * contact upstream to get licence/copyright file
 * remove qt3support
 * test on opengles hw
