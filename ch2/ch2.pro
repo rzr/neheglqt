@@ -14,3 +14,5 @@ HEADERS += ../nehewidget.h ch2.h
 SOURCES += main.cpp ../nehewidget.cpp
 
 
+INSTALL+=target
+target.path=/opt/neheglqt
