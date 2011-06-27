@@ -8,8 +8,16 @@ License: OpenSource
 Summary: 3D demos tutorial
 URL: http://rzr.online.fr/q/gl
 Group: Amusements/Games
+Source0: https://gitorious.org/neheglqt/%{name}/archive-tarball/master
+Source1:    %{name}.desktop
 Requires: libqt >= 4.7.0 
 Requires:  opengl-games-utils
+BuildRequires: qt-qmake
+BuildRequires: mesa-libGL-devel
+BuildRequires: mesa-libGLU-devel
+BuildRequires: libqtopengl-devel
+BuildRequires: opengl-games-utils
+
 
 %description
 3D Demos to lean OpenGL using Qt4
