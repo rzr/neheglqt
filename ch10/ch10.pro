@@ -6,18 +6,19 @@ TEMPLATE = app
 
 QT+=opengl
 
-INCLUDEPATH += .
+INCLUDEPATH += . ..
 #LIBS += -lGLU
 
 # Input
 HEADERS += ../nehewidget.h ch10.h
 SOURCES += main.cpp ../nehewidget.cpp
 
-unix:!symbian {
-    maemo5 {
-        target.path = /opt/usr/bin
-    } else {
-        target.path = /usr/local/bin
-    }
-    INSTALLS += target
-}
+
+include(../config.pri)
+
+#data+=world.txt
+#data+=data
+
+data.path=$$target.path/
+data.files = *.txt
+

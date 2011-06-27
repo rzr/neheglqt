@@ -22,7 +22,9 @@ private:
 		QImage t;
 		QImage b;
 		
-		if ( !b.load( "../images/glass.bmp" ) )
+		if ( !b.load
+                     ( //"../images/"
+                      "glass.bmp" ) )
 		{
       b = QImage( 16, 16 , QImage::Format_RGB32 );
       b.fill( QColor(Qt::green).value() );

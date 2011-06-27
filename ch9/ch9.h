@@ -29,7 +29,9 @@ private:
 		QImage t;
 		QImage b;
 		
-		if ( !b.load( "../images/star.bmp" ) )
+		if ( !b.load
+                     ( //"../images/"
+                      "star.bmp" ) )
 		{
       b = QImage( 16, 16 , QImage::Format_RGB32 );
       b.fill( QColor(Qt::green).value() );

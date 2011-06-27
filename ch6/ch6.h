@@ -13,7 +13,9 @@ private:
 		QImage t;
 		QImage b;
 		
-		if ( !b.load( "../images/nehe.bmp" ) )
+		if ( !b.load
+                     ( //"../images/"
+                      "nehe.bmp" ) )
 		{
       b = QImage( 16, 16 , QImage::Format_RGB32 );
       b.fill( QColor(Qt::green).value() );

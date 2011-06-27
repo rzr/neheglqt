@@ -40,7 +40,9 @@ private:
 	
 	void loadTriangles()
 	{
-    QFile f( "../ch10/" "world.txt" );
+          QFile f
+            ( //"../ch10/"
+             "world.txt" );
 		
 		if( f.open( QIODevice::ReadOnly ) )
 		{
@@ -95,7 +97,9 @@ private:
 		QImage t;
 		QImage b;
 		
-		if ( !b.load( "../images/mud.bmp" ) )
+		if ( !b.load
+                     ( //"../images/
+                      "mud.bmp" ) )
 		{
       b = QImage( 16, 16 , QImage::Format_RGB32 );
       b.fill( QColor(Qt::green).value() );

@@ -6,9 +6,11 @@ TEMPLATE = app
 
 QT+=opengl
 
-INCLUDEPATH += .
+INCLUDEPATH += . ..
 #LIBS += -lGLU
 
 # Input
 HEADERS += ../nehewidget.h ch7.h
 SOURCES += main.cpp ../nehewidget.cpp
+
+include(../config.pri)

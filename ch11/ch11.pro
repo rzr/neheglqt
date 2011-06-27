@@ -12,3 +12,6 @@ INCLUDEPATH += .
 # Input
 HEADERS += ../nehewidget.h ch11.h
 SOURCES += main.cpp ../nehewidget.cpp
+
+
+include(../config.pri)
