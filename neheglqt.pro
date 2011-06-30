@@ -1,3 +1,4 @@
+#! /usr/bin/qmake
 #! /usr/bin/qmake-qt4
 
 TEMPLATE = subdirs
@@ -7,10 +8,12 @@ OTHERDIRS= images
 
 include(config.pri)
 
+desktopfile.files = $${TARGET}.desktop
+
 data+=data
 data.path=$$target.path/
 data.files += images/*.bmp **/*.txt COPYING README *.txt *.sh
 
-desktopfile.files = $${TARGET}.desktop
-
 INSTALLS += data
+
+

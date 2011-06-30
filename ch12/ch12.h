@@ -1,7 +1,5 @@
 #include <qimage.h>
-#include <q3valuelist.h>
 #include <qfile.h>
-//Added by qt3to4:
 #include <QKeyEvent>
 
 #include "../nehewidget.h"

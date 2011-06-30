@@ -4,7 +4,7 @@
 
 TEMPLATE = app
 
-QT+=opengl qt3support
+QT+=opengl
 
 INCLUDEPATH += .
 #LIBS += -lGLU

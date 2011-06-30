@@ -1,7 +1,6 @@
 #include <cmath>
 
 #include <qimage.h>
-#include <q3valuelist.h>
 #include <qfile.h>
 
 #include "../nehewidget.h"

@@ -8,7 +8,8 @@ License: OpenSource
 Summary: 3D demos tutorial
 URL: http://rzr.online.fr/q/gl
 Group: Amusements/Games
-Source0: https://gitorious.org/neheglqt/%{name}/archive-tarball/master
+Source0: %{name}-%{version}.tar.gz
+# https://gitorious.org/neheglqt/%{name}/archive-tarball/master
 Source1:    %{name}.desktop
 Requires: libqt >= 4.7.0 
 Requires:  opengl-games-utils
