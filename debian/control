@@ -3,8 +3,6 @@ Section: graphics
 Priority: extra
 Maintainer: Philippe Coval <rzr@gna.org>
 Build-Depends: debhelper (>= 7.0.50~), 
- qt4-dev-tools,
- libqt4-dev, 
  libqt4-opengl-dev
 Standards-Version: 3.9.1
 Homepage: https://gitorious.org/neheglqt
@@ -14,5 +12,5 @@ Homepage: https://gitorious.org/neheglqt
 Package: neheglqt
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: opengl demos for qt4
- <insert long description, indented with spaces>
+Description: 3D OpenGL examples Demo ported to qt4
+ Old skewl demo tutorial from nehe.gamedev.net

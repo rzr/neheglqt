@@ -17,3 +17,5 @@ ch9
 ch10
 ch11
 ch12
+
+# glxinfo || echo "ignored: $@"
