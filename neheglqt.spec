@@ -11,7 +11,7 @@ Group: Amusements/Games
 Source0: %{name}-%{version}.tar.gz
 # https://gitorious.org/neheglqt/%{name}/archive-tarball/master
 Source1:    %{name}.desktop
-Requires: libqt >= 4.7.0 
+#Requires: libqt >= 4.7.0 
 Requires:  opengl-games-utils
 BuildRequires: qt-qmake
 BuildRequires: mesa-libGL-devel
@@ -36,9 +36,9 @@ make install INSTALL_ROOT=%{buildroot}
 %files 
 %defattr(-,root,root,-) 
 
-/opt/%{name} 
+#/opt/%{name} 
 
-#/opt/%{app_name} 
+/opt/%{app_name} 
 #%{_datadir}/applications/*.desktop 
 ##%{_datadir}/icons/*.png 
 #%{_datadir}/icons/hicolor/16x16/apps/*.png 
