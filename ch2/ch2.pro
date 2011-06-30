@@ -6,7 +6,7 @@ TEMPLATE = app
 
 QT+=opengl
 
-INCLUDEPATH += .
+INCLUDEPATH += . ..
 #LIBS += -lGLU
 
 # Input
