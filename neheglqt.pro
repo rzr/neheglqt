@@ -12,6 +12,7 @@ desktopfile.files = $${TARGET}.desktop
 
 data+=data
 data.path=$$target.path/
+#data.path=$$target.path/images/ #TODO
 data.files += images/*.bmp **/*.txt COPYING README *.txt *.sh
 
 INSTALLS += data

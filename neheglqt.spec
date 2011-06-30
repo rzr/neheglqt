@@ -1,5 +1,5 @@
 # Define package name 
-%define neheglqt org.gitorious.user.rzr.neheglqt
+%define app_name org.gitorious.user.rzr.neheglqt
 
 Name: neheglqt
 Version: 0.0.0
@@ -36,14 +36,16 @@ make install INSTALL_ROOT=%{buildroot}
 %files 
 %defattr(-,root,root,-) 
 
-/opt/%{app_name} 
-%{_datadir}/applications/*.desktop 
-%{_datadir}/icons/*.png 
-%{_datadir}/icons/hicolor/16x16/apps/*.png 
-%{_datadir}/icons/hicolor/32x32/apps/*.png
-%{_datadir}/icons/hicolor/64x64/apps/*.png
-%{_datadir}/icons/hicolor/128x128/apps/*.png
-/var/opt/%{app_name}/sounds/*.wav 
-/var/opt/%{app_name}/UI/*.*
-/var/opt/%{app_name}/UI/Stars/*.*
-/var/opt/%{app_name}/UI/Icons/*.* 
+/opt/%{name} 
+
+#/opt/%{app_name} 
+#%{_datadir}/applications/*.desktop 
+##%{_datadir}/icons/*.png 
+#%{_datadir}/icons/hicolor/16x16/apps/*.png 
+#%{_datadir}/icons/hicolor/32x32/apps/*.png
+#%{_datadir}/icons/hicolor/64x64/apps/*.png
+#%{_datadir}/icons/hicolor/128x128/apps/*.png
+#/var/opt/%{app_name}/sounds/*.wav 
+#/var/opt/%{app_name}/UI/*.*
+#/var/opt/%{app_name}/UI/Stars/*.*
+#/var/opt/%{app_name}/UI/Icons/*.* 
