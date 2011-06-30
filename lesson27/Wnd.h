@@ -2,14 +2,15 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
-
-#include <kmainwindow.h>
+#include <QMainWindow>
+//#include <kmainwindow.h>
 
 class Lesson27Widget;
 
 namespace NeHe {
    
-class MainWindow : public KMainWindow
+class MainWindow 
+  : public QMainWindow
 {
   Q_OBJECT
 

@@ -7,14 +7,19 @@
 //		Attention!!! This code is not for beginners.
 //   
 //    Linux KDE C++ port by Zsolt Hajdu
+#include <QtGui>
+#include <QGLWidget>
 
-#include <kfiledialog.h>
+#include <QFileDialog>
+#if 0
 #include <kapp.h>
 #include <kmenubar.h>
 #include <klocale.h>
 #include <kmessagebox.h>
 #include <kpopupmenu.h>
 #include <qtextview.h>
+#endif
+
 
 #include <string>
 #include <iostream>
@@ -28,7 +33,7 @@ using namespace NeHe;
 
 Lesson27Widget::Lesson27Widget( const QGLFormat &form,
 									QWidget* parent, const char * name ) :
-          	QGLWidget( form, parent, name),
+  QGLWidget( form, parent /*, name */),
 				LightPos_( 0.0f, 5.0f, -4.0f, 1.0f ),
 				LightAmb_( 0.2f, 0.2f, 0.2f, 1.0f ),
 				LightDif_( 0.6f, 0.6f, 0.6f, 1.0f ),
@@ -44,7 +49,7 @@ Lesson27Widget::Lesson27Widget( const QGLFormat &form,
 	pParent_ = parent;
 
 	xrot_ = yrot_ = xspeed_ = yspeed_ = 0;
-	setFocusPolicy( QWidget::StrongFocus );
+	//setFocusPolicy( QWidget::StrongFocus );
 	startTimer( 5 );
 	currObject_ = 2;
 }
@@ -504,84 +509,84 @@ void Lesson27Widget::keyPressEvent( QKeyEvent *k )
 
 	switch ( k->key() ) {
 		// Adjust Light's Position
-	  case Key_L:
+	  case Qt::Key_L:
 			LightPos_[0] += flStep;				// 'L' Moves Light Right
 			break;
-	  case Key_J:
+	  case Qt::Key_J:
 			LightPos_[0] -= flStep;				// 'J' Moves Light Left
 			break;
 
-	  case Key_I:
+	  case Qt::Key_I:
 			LightPos_[1] += flStep;				// 'I' Moves Light Up
 			break;
-	  case Key_K:
+	  case Qt::Key_K:
 			LightPos_[1] -= flStep;				// 'K' Moves Light Down
 			break;
 
-	  case Key_O:
+	  case Qt::Key_O:
 			LightPos_[2] += flStep;				// 'O' Moves Light Toward Viewer
 			break;
-	  case Key_U:
+	  case Qt::Key_U:
 			LightPos_[2] -= flStep;				// 'U' Moves Light Away From Viewer
 			break;
 
 // Adjust Object's Position
-	  case Key_6:
+	  case Qt::Key_6:
 			ObjPos_[0] += flStep;			// 'Numpad6' Move Object Right
 			break;
-	  case Key_4:
+	  case Qt::Key_4:
 			ObjPos_[0] -= flStep;			// 'Numpad4' Move Object Left
 			break;
 
-	  case Key_8:
+	  case Qt::Key_8:
 			ObjPos_[1] += flStep;			// 'Numpad8' Move Object Up
 			break;
-	  case Key_5:
+	  case Qt::Key_5:
 			ObjPos_[1] -= flStep;			// 'Numpad5' Move Object Down
 			break;
 
-	  case Key_9:
+	  case Qt::Key_9:
 			ObjPos_[2] += flStep;			// 'Numpad9' Move Object Toward Viewer
 			break;
-	  case Key_7:
+	  case Qt::Key_7:
 			ObjPos_[2] -= flStep;			// 'Numpad7' Move Object Away From Viewer
 			break;
 
 // Adjust Ball's Position
-	  case Key_D:
+	  case Qt::Key_D:
 			SpherePos_[0] += flStep;				// 'D' Move Ball Right
 			break;
-	  case Key_A:
+	  case Qt::Key_A:
 			SpherePos_[0] -= flStep;				// 'A' Move Ball Left
 			break;
 
-	  case Key_W:
+	  case Qt::Key_W:
 			SpherePos_[1] += flStep;				// 'W' Move Ball Up
 			break;
-	  case Key_S:
+	  case Qt::Key_S:
 			SpherePos_[1] -= flStep;				// 'S' Move Ball Down
 			break;
 
-	  case Key_E:
+	  case Qt::Key_E:
 			SpherePos_[2] += flStep;				// 'E' Move Ball Toward Viewer
 			break;
-	  case Key_Q:
+	  case Qt::Key_Q:
 			SpherePos_[2] -= flStep;				// 'Q' Move Ball Away From Viewer
 			break;
 
-	  case Key_Escape:    //Escape key
+	  case Qt::Key_Escape:    //Escape key
 			exit(0);
 
-     case Key_Left:
+     case Qt::Key_Left:
             yspeed_ -= 0.2f;					// 'Arrow Left' Decrease yspeed
             break;
-     case Key_Right:
+     case Qt::Key_Right:
             yspeed_ += 0.2f;					// 'Arrow Right' Increase yspeed
             break;
-     case Key_Up:
+     case Qt::Key_Up:
             xspeed_ -= 0.2f;					// 'Arrow Up' Decrease xspeed
             break;
-     case Key_Down:
+     case Qt::Key_Down:
             xspeed_ += 0.2f;					// 'Arrow Down' Increase xspeed
             break;
 			

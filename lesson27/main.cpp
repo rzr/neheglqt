@@ -1,18 +1,18 @@
-
-
-#include <kapp.h>
+#include "config.h"
+#include <QApplication>
+//#include <kapp.h>
 #include "Wnd.h"
 
 using namespace NeHe;
 
 int main( int argc, char **argv )
 {
-    KApplication a( argc, argv, "NeHe Lesson27");
+    QApplication a( argc, argv, "NeHe Lesson27");
 
     MainWindow *window=new MainWindow( "Banu Octavian & NeHe's Shadow Casting Tutorial" );
-    window->resize( 800, 600 );
+    //window->resize( 800, 600 );
 
-    a.setMainWidget( window );
+    //a.setMainWidget( window );
     window->show();
 
     return a.exec();

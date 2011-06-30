@@ -1,5 +1,6 @@
-
 #include <qgl.h>
+
+#if 0
 #include <kfiledialog.h>
 #include <kapp.h>
 #include <kmenubar.h>
@@ -7,6 +8,8 @@
 #include <kmessagebox.h>
 #include <kpopupmenu.h>
 #include <qtextview.h>
+#endif
+
 #include <iostream>
 
 #include "Widget.h"
@@ -16,10 +19,11 @@ using namespace NeHe;
 using namespace std;
 
 
-MainWindow::MainWindow ( const char * name ) : KMainWindow ( 0L, name )
+MainWindow::MainWindow ( const char * name ) 
+  : QMainWindow ( /* 0L, name */)
 {
-	setCaption("Banu Octavian & NeHe's Shadow Casting Tutorial");
-
+  //setCaption("Banu Octavian & NeHe's Shadow Casting Tutorial");
+#if 0
 	QPopupMenu *filemenu = new QPopupMenu;
 	filemenu->insertItem( i18n( "&Next Object" ), this, SLOT(fileNext()) );
 	filemenu->insertItem( i18n( "&Quit" ), kapp, SLOT(quit()) );
@@ -29,13 +33,16 @@ MainWindow::MainWindow ( const char * name ) : KMainWindow ( 0L, name )
 	"Oct - 2003\n");
 
 	QPopupMenu *helpmenu = helpMenu( about );
-	KMenuBar *menu = menuBar();
+	QMenuBar *menu = menuBar();
 	menu->insertItem( i18n( "&File" ), filemenu);
 	menu->insertSeparator();
 	menu->insertItem( i18n( "&Help" ), helpmenu);
-
-	widget_ = new Lesson27Widget( QGLFormat( QGLFormat::StencilBuffer |
-									QGLFormat::DepthBuffer), this, "NeheLesson27" );
+#endif
+	widget_ = new Lesson27Widget
+          ( QGLFormat( QGL::StencilBuffer |
+                       QGL::DepthBuffer), 
+            this, "NeheLesson27" );
+        
 	if ( widget_ )
 	{
 		if ( widget_->format().stencil() && widget_->format().depth() )

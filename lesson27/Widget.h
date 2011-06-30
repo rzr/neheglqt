@@ -2,7 +2,7 @@
 #ifndef _LESSON27WIDGET_H_
 #define _LESSON27WIDGET_H_
 
-
+#include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 #include <sys/time.h>
@@ -63,7 +63,7 @@ struct sPlane{
 	sPlaneEq PlaneEq;
 	bool visible;
 
-	sPlane::sPlane() { memset( neigh, 0, sizeof neigh ); }
+  /*sPlane::*/sPlane() { memset( neigh, 0, sizeof neigh ); }
 };
 
 // object structure
