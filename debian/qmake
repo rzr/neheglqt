@@ -1,4 +1,0 @@
-#!/bin/sh -x
-
-echo "overriding: $0 $@"
-qmake-qt4 "$@"
